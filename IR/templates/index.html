@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body background="../static/bg.png">
+  <div id="main" style="width: 100%;">
+    <div id="header" align="center">
+        <img style="width: 15%;" src="../static/logo.png">
+        <form action="/index" method="post">
+          <h2>小狐狸邮件检索系统</h2>
+          <p>请输入搜索关键词：<input type="text" name="keywords" ></p>
+          <button type="submit">搜索</button>
+        </form>
+    </div>
+    <div id="content" align="center">
+        <table class="table table-striped" border="10 pixeis">
+          <tr>
+            <td>Subject</td>
+            <td>Message_id</td>
+            <td>Date</td>
+            <td>FromPeople</td>
+            <td>ContentType</td>
+            <td>XFrom</td>
+            <td>Content</td>
+          </tr>
+          {% for data in datalist %}
+          <tr>
+            <td>{{ data['Subject'] }}</td>
+            <td>{{ data['Message_id'] }}</td>
+            <td>{{ data['Date'] }}</td>
+            <td>{{ data['FromPeople'] }}</td>
+            <td>{{ data['ContentType'] }}</td>
+            <td>{{ data['XFrom'] }}</td>
+            <td>{{ data['Content'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+    </div>
+  </div>
+
+    
+</body>
+</html>
