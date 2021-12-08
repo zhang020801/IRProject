@@ -59,15 +59,15 @@ IR_project
 
 **未输入检索信息时**
 
-![](D:/Users/31156/Desktop/IR_project/IR/static/README_img01.png)
+![](IR/static/README_img01.png)
 
 **输入检索关键字**
 
-![](D:/Users/31156/Desktop/IR_project/IR/static/README_img02.png)
+![](IR/static/README_img02.png)
 
 **检索结果渲染**
 
-![](D:/Users/31156/Desktop/IR_project/IR/static/README_img03.png)
+![](IR/static/README_img03.png)
 
 **更新后的界面**
 
@@ -88,9 +88,9 @@ IR_project
 
 2. 安装SQLite Viewer插件，查看数据库中的数据是否处理生成。
 
-   ![](D:/Users/31156/Desktop/IR_project/IR/static/README_img04.png)
+   ![](IR/static/README_img04.png)
 
-   ![](D:/Users/31156/Desktop/IR_project/IR/static/README_img05.png)
+   ![](IR/static/README_img05.png)
 
 3. 运行`index_craete.py`    创建数据索引。
 
@@ -100,4 +100,4 @@ IR_project
 
 如有任何疑问，可添加作者微信，进一步了解项目。
 
-![](D:/Users/31156/Desktop/IR_project/IR/static/README_img06.png)
+![](IR/static/README_img06.png)
