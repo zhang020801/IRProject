@@ -71,7 +71,7 @@ IR_project
 
 **更新后的界面**
 
-![](D:/Users/31156/Desktop/IRProject/IR/static/README_img07.png)
+![](IR/static/README_img07.png)
 
 ## 项目搭建
 
