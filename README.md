@@ -28,6 +28,7 @@ IR_project
 | | ├─processingData.py  处理邮件TXT数据,导入到sqlite数据库中
 | | ├─run_server.py      运行检索系统，启动界面服务，进行检索（可视化）  
 | | ├─search_index.py    使用index索引，返回检索结果
+| | ├─search_dict.py     使用布尔索引，返回检索结果
 ├─IRData.db	             邮件数据库
 └─README.md              项目介绍
 ```
@@ -45,11 +46,14 @@ IR_project
 
 **项目依赖库**
 
-| 库名称 | 版本号 |
-| ------ | ------ |
-| whoosh | 2.7.4  |
-| numpy  | 1.21.4 |
-| flask  | 2.0.2  |
+| 库名称   | 版本号 |
+| -------- | ------ |
+| whoosh   | 2.7.4  |
+| numpy    | 1.21.4 |
+| flask    | 2.0.2  |
+| nltk     | 3.6.5  |
+| pandas   | 1.1.5  |
+| textblob | 0.17.1 |
 
 ## 项目预览
 
@@ -64,6 +68,10 @@ IR_project
 **检索结果渲染**
 
 ![](D:/Users/31156/Desktop/IR_project/IR/static/README_img03.png)
+
+**更新后的界面**
+
+![](D:/Users/31156/Desktop/IRProject/IR/static/README_img07.png)
 
 ## 项目搭建
 

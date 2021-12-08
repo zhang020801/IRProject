@@ -22,7 +22,8 @@ class IndexBuilder:
       Message_id = ID(stored = True),
       Date = TEXT(stored = True),
       FromPeople = TEXT(stored = True),
-      Content = TEXT(stored = True),  # 文章内容太长了，不存
+      Content = TEXT(stored = True),  
+      URL = TEXT(stored = True),
     )
     # 索引文件相关
     import os.path
@@ -44,6 +45,7 @@ class IndexBuilder:
           Date = data[2],
           FromPeople = data[3],
           Content = data[7],
+          URL = data[8]
       )
       # the end
       writer.commit()     # 每次构建提交一次

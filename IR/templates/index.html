@@ -13,10 +13,18 @@
         <form action="/index" method="post">
           <h2>小狐狸邮件检索系统</h2>
           <p>请输入搜索关键词：<input type="text" name="keywords" ></p>
+          <p>请输入布尔查询语句：<input type="text" name="boolsearch" ></p>
           <button type="submit">搜索</button>
         </form>
     </div>
+    
     <div id="content" align="center">
+      <div id="content-result" style="color: darkturquoise;">
+        <table class="table table-striped" border="10 pixeis">
+          <tr><td>布尔检索结果</td></tr>
+          <tr><td>{{result}}</td></tr>
+        </table>
+      </div>
         <table class="table table-striped" border="10 pixeis">
           <tr>
             <td>Subject</td>
@@ -26,6 +34,7 @@
             <td>ContentType</td>
             <td>XFrom</td>
             <td>Content</td>
+            <td>URL</td>
           </tr>
           {% for data in datalist %}
           <tr>
@@ -36,6 +45,7 @@
             <td>{{ data['ContentType'] }}</td>
             <td>{{ data['XFrom'] }}</td>
             <td>{{ data['Content'] }}</td>
+            <td>{{ data['URL'] }}</td>
           </tr>
           {% endfor %}
         </table>

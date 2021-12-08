@@ -25,7 +25,7 @@ def getDataList(id):
   for file in files: #遍历文件夹
     data = []
     position = path+'\\'+ file #构造绝对路径，"\\"，其中一个'\'为转义符
-    print (position)           
+    # print (position)           
     with open(position, "r",encoding='utf-8') as f:    #打开文件
       fileDetail = f.read()   #读取文件
       # print(fileDetail)
@@ -66,9 +66,13 @@ def getDataList(id):
       # print(Content)
       data.append(Content)
 
-      print(data)
+      fileURL = path+'\\'+ file
+      data.append(fileURL)
 
-      datalist.append(data)
+
+      # print(data)
+    data.append(position)
+    datalist.append(data)
   return datalist
 
 ## 将数据保存到sqlite数据库中
@@ -81,8 +85,8 @@ def saveData(dbpath,datalist):
         for index in range(len(data)):
             sql = '''
               insert into IRData(
-              id, Message_id, Date, FromPeople, Subject, ContentType, XFrom, Content)
-              values ("%s","%s","%s","%s","%s","%s","%s","%s")'''%(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7])
+              id, Message_id, Date, FromPeople, Subject, ContentType, XFrom, Content,URL)
+              values ("%s","%s","%s","%s","%s","%s","%s","%s","%s")'''%(data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8])
         print(sql)
         cur.execute(sql)
         conn.commit()
@@ -99,7 +103,8 @@ def init_db(dbpath):
     Subject text,
     ContentType text,
     XFrom text,
-    Content text
+    Content text,
+    URL
     )
     '''
     conn = sqlite3.connect(dbpath)
@@ -112,10 +117,10 @@ def init_db(dbpath):
 if __name__ == "__main__":
 
   ## 定义文件目录
-  path = "D:\\Users\\31156\\Desktop\\information-retrieval\\IR\\hyatt-k\\projects\\tsunami" #文件夹目录
+  path = "D:\\Users\\31156\\Desktop\\IR_project\\IR\\hyatt-k\\tw" #文件夹目录
   files= os.listdir(path) #得到文件夹下的所有文件名称
   dbpath = "IRData.db"
-  
+  # id = 0
   ## 获取数据表长度
   id = getDBLength(dbpath) + 1
 
